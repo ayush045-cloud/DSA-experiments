@@ -5,7 +5,7 @@ int stack[SIZE];
 int top = -1;
 
 // Push operation
-void push(int value) {
+void push(int value) { 
     if (top == SIZE - 1) {
         printf("Stack Overflow! Cannot push %d\n", value);
     } else {
