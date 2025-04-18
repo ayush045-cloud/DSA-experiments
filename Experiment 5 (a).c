@@ -10,14 +10,15 @@ void bubbleSort(int arr[], int n) {
             }
 }
 
-void insertionSort(int arr[], int n) {
-    for (int i = 1; i < n; i++) {
-        int key = arr[i], j = i - 1;
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int min = i;
+        for (int j = i + 1; j < n; j++)
+            if (arr[j] < arr[min])
+                min = j;
+        int temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
     }
 }
 
@@ -39,7 +40,7 @@ int main() {
 
     printf("Choose sorting method:\n");
     printf("1. Bubble Sort\n");
-    printf("2. Insertion Sort\n");
+    printf("2. Selection Sort\n");
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
@@ -49,8 +50,8 @@ int main() {
             printf("Sorted array using Bubble Sort:\n");
             break;
         case 2:
-            insertionSort(arr, n);
-            printf("Sorted array using Insertion Sort:\n");
+            selectionSort(arr, n);
+            printf("Sorted array using Selection Sort:\n");
             break;
         default:
             printf("Invalid choice.\n");
