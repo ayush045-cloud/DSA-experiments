@@ -1,6 +1,6 @@
 #include <stdio.h>
  
- // Function for Linear Search
+
  int linearSearch(int arr[], int n, int key) {
      for(int i = 0; i < n; i++) {
          if(arr[i] == key)
